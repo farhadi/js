@@ -30,6 +30,11 @@
 		// The dummy class constructor
 		function Class() {
 			if (!initializing) {
+				if (!(this instanceof Class)) {
+					//When a class is used as a function, self function will be called (if defined) 
+					return Class.self ? Class.self.apply(this, arguments) : null;
+				}
+					
 				var _this = this;
 				var _parent = this._parent = {};
 				var parent = Class.parent;

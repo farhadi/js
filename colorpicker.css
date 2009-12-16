@@ -1,0 +1,24 @@
+.colorpicker {
+	border: 1px solid #888;
+	background: #FFF;
+	padding: 2px;
+	width: 128px;
+	position: absolute;
+	z-index: 1000;
+	cursor: default;
+	margin: 0;
+}
+
+.colorpicker li{
+	border: 1px solid #888;
+	margin: 2px;
+	width: 10px;
+	height: 10px;
+	float: left;
+	list-style: none;
+	cursor: pointer;
+}
+
+.colorpicker li:hover{
+	border: 1px solid #000;
+}
