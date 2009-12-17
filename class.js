@@ -36,24 +36,24 @@
 				}
 					
 				var _this = this;
-				var _parent = this._parent = {};
-				var parent = Class.parent;
+				var parent = this.parent = {};
+				var parentClass = Class.parent;
 				
 				// Creating parent methods
 				while (true) {
-					for (key in parent.prototype) if (typeof parent.prototype[key] == 'function') {
-						_parent[key] = (function(key, parent){
+					for (key in parentClass.prototype) if (typeof parentClass.prototype[key] == 'function') {
+						parent[key] = (function(key, parentClass){
 							return function(){
-								var tmp = _this._parent;
-								_this._parent = _this._parent._parent; 
-								parent.prototype[key].apply(_this, arguments);
-								_this._parent = tmp;
+								var tmp = _this.parent;
+								_this.parent = _this.parent.parent; 
+								parentClass.prototype[key].apply(_this, arguments);
+								_this.parent = tmp;
 							};
-						})(key, parent);
+						})(key, parentClass);
 					}
-					if (!parent.parent) break; 
-					parent = parent.parent;
-					_parent = _parent._parent = {};
+					if (!parentClass.parent) break; 
+					parentClass = parentClass.parent;
+					parent = parent.parent = {};
 				}
 				
 				// Enforce the constructor to be what we expect
