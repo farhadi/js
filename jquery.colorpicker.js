@@ -16,7 +16,7 @@
 			className: 'colorpicker',
 			callback: null,
 			element: this,
-			input: null,
+			input: null
 		}, options);
 		
 		options.element = $(options.element);
@@ -29,7 +29,7 @@
 				options.element.eq(i).css('background', $(this).val());
 			}).keyup(function(){
 				options.element.eq(options.input.index(this)).css('background', $(this).val());
-			});;
+			});
 		}
 		
 		$.each(options.colors, function(){
@@ -37,7 +37,7 @@
 		});
 		
 		container.hide().appendTo('body').find('li').click(function(){
-			var color = options.colors[$(this).index()];
+			var color = options.colors[container.find('li').index(this)];
 			options.element.eq(index).css('background', color);
 			options.input.eq(index).val(color);
 			if (options.callback) {
