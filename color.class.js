@@ -26,9 +26,8 @@
 		},
 		
 		toHex: function() {
-			var hex = (this.r * 65536 + this.g * 256 + this.b).toString(16);
-			while (hex.length < 6) hex = '0' + hex;
-			return '#' + hex;
+			var hex = (this.r * 0x10000 + this.g * 0x100 + this.b).toString(16);
+			return '#' + ('00000' + hex).substr(-6);
 		}
 	});
 	
