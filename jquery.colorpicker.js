@@ -53,7 +53,7 @@
 			container.css(offset).hide().fadeIn('fast');
 		});
 		
-		$(window).click(function(){
+		$(window.document).click(function(){
 			container.fadeOut('fast');
 		});
 		
