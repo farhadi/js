@@ -1,0 +1,26 @@
+.imagepicker {
+	border: 1px solid #888;
+	background: #FFF;
+	padding: 2px;
+	width: 112px;
+	position: absolute;
+	z-index: 1000;
+	cursor: default;
+	margin: 0;
+}
+
+.imagepicker li{
+	border: 1px solid #888;
+	margin: 2px;
+	float: left;
+	list-style: none;
+	cursor: pointer;
+}
+
+.imagepicker li img{
+	display: block;
+}
+
+.imagepicker li:hover{
+	border: 1px solid #000;
+}
